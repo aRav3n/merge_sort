@@ -45,3 +45,14 @@ const mergeSort = function (array) {
   // when all the comparing is complete return the new array
   return newArray;
 };
+
+const testArrayOne = [3, 2, 1, 13, 8, 5, 0, 1];
+const testArrayTwo = [105, 79, 100, 110];
+
+const sortedTestOne = mergeSort(testArrayOne);
+const sortedTestTwo = mergeSort(testArrayTwo);
+
+console.log(testArrayOne);
+console.log(sortedTestOne);
+console.log(testArrayTwo);
+console.log(sortedTestTwo);
