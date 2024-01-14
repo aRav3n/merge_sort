@@ -8,7 +8,7 @@ const mergeSort = function (array) {
     return array;
   } else {
     // if the array length is greater than 1 split it into 2 halves with any odd numbers splitting the same way every time
-    const arrayHalfOneLength = math.floor(array.length / 2);
+    const arrayHalfOneLength = Math.floor(array.length / 2);
 
     for (let i = 0; i < arrayHalfOneLength; i++) {
       arrayHalfOne.push(array[i]);
@@ -36,9 +36,11 @@ const mergeSort = function (array) {
         arraySortedTwo.shift();
       }
     } else if (arraySortedOne.length) {
-      newArray.push(...arraySortedOne);
+      newArray.push(arraySortedOne[0]);
+      arraySortedOne.shift();
     } else if (arraySortedTwo.length) {
-      newArray.push(...arraySortedTwo);
+      newArray.push(arraySortedTwo[0]);
+      arraySortedTwo.shift();
     }
   }
 
@@ -52,7 +54,7 @@ const testArrayTwo = [105, 79, 100, 110];
 const sortedTestOne = mergeSort(testArrayOne);
 const sortedTestTwo = mergeSort(testArrayTwo);
 
-console.log(testArrayOne);
-console.log(sortedTestOne);
-console.log(testArrayTwo);
-console.log(sortedTestTwo);
+console.log(`test array 1: ${testArrayOne}`);
+console.log(`sorted test array 1: ${sortedTestOne}`);
+console.log(`test array 2: ${testArrayTwo}`);
+console.log(`sorted test array 2: ${sortedTestTwo}`);
